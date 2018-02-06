@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es, en">
+<html lang="es">
 <head>
     <title>Registro</title>
     <?php include './inc/link.php'; ?>
@@ -26,7 +26,7 @@
                     <div id="container-form">
                        <p style="color:#fff;" class="text-center lead">Debera de llenar todos los campos para registrarse</p>
                        <br><br>
-                       <form action="focus" class="form-horizontal FormCatElec" action="process/regclien.php" role="form" method="post" data-form="save">
+                       <form class="form-horizontal FormCatElec" action="process/regclien.php" role="form" method="post" data-form="save">
                            <div class="form-group">
                               <div class="input-group">
                                 <div class="input-group-addon"><i class="fa fa-credit-card"></i></div>
@@ -76,27 +76,17 @@
                               </div>
                             </div>
                             <br>
-
                             <div class="form-group">
                               <div class="input-group">
                                 <div class="input-group-addon"><i class="fa fa-at"></i></div>
-                                <input class="form-control all-elements-tooltip" type="text" placeholder="Ingrese su Email" required name="clien-email" data-toggle="tooltip" data-placement="top" title="Ingrese la dirección de su Email" maxlength="50" style="width: 200px">
-                                <input class="form-control all-elements-tooltip" type="text" required name="clien-email-arroba" name="at" value="@" disabled = "true" style="width: 37px">
-<!--                                 <select class="form-control" required name="clien-email-ter" style="width: 150px">
-                                    <option>gmail.com</option>
-                                    <option>outlook.com</option>
-                                    <option>hotmail.es</option>
-                                    <option>hotmail.com</option> -->
-                                  </div>
-                                </div>
+                                <input class="form-control all-elements-tooltip" type="email" placeholder="Ingrese su Email" required name="clien-email" data-toggle="tooltip" data-placement="top" title="Ingrese la dirección de su Email" maxlength="50">
                               </div>
-                                <div class="checkbox" style="color:#fff;">
-                                  <label><input type="hidden"></label>
-                                </div>
+                            </div>
+                              <p><button type="submit" class="btn btn-success btn-block"><i class="fa fa-pencil"></i>&nbsp; Registrarse</button></p>
+                              <div class="ResForm" style="width: 100%; color: #fff; text-align: center; margin: 0;"></div>
                             </div>
                             <br>
-                            <p><button type="submit" class="btn btn-success btn-block"><i class="fa fa-pencil"></i>&nbsp; Registrarse</button></p>
-                            <div class="ResForm" style="width: 100%; color: #fff; text-align: center; margin: 0;"></div>
+
                         </form> 
                     </div> 
                 </div>

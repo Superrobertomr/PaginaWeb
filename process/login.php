@@ -5,10 +5,14 @@
     sleep(2);
     $nombre=$_POST['nombre-login'];
     $clave=md5($_POST['clave-login']);
+    $contador=0;
     //$radio=$_POST['optionsRadios'];
     if(!$nombre==""&&!$clave==""){
         //verUser=ejecutarSQL::consultar("select * from cliente where Nombre='$nombre' and Clave='$clave'");
         //verAdmin=ejecutarSQL::consultar("select * from administrador where Nombre='$nombre' and Clave='$clave'");
+        if ($clave, ) {
+            # code...
+        }
         $isesion1=ejecutarSQL::consultar("select * from cliente where Nickname='$nombre' and Clave='$clave'");
         $i1 = mysqli_num_rows($isesion1);
         if ($i1>0) {
