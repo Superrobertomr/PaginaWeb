@@ -30,24 +30,24 @@
           <video controls="play" class="" style="width: 100%; height: 75%; padding-bottom: 26px; padding-top: 1px">
             <source src="assets/videos/la-contabilidad.mp4" type="video/mp4">
           </video>
-        </div>
 
-
-
-           <div class="container col-sm-8" align="center" id="new-prod-index2">
-          <video controls class="" style="width: 100%; height: 50%; padding-bottom: 26px; padding-top: 1px">
-            <source src="assets/videos/Nietzsche.mp4" type="video/mp4">
-          </video>
         </div>
         <div class="container col-sm-4">
           <h2>Contabilidad Escritorio</h2>
-          <div class="checkbox"><label><h4><input type="checkbox" value="">Facturación</h4></label></div>
-          <div class="checkbox"><label><h4><input type="checkbox" value="">Cuentas por cobrar</h4></label></div>
+          <div class="checkbox"><label><h4><input type="checkbox" value="Facturación">Facturación</h4></label></div>
+          <div class="checkbox"><label><h4><input type="checkbox" value="Cuentas por cobrar">Cuentas por cobrar</h4></label></div>
           <div class="checkbox"><label><h4><input type="checkbox" value="">Contabilidad</h4></label></div>
           <div class="checkbox"><label><h4><input type="checkbox" value="">Bancos</h4></label></div>
           <div class="checkbox"><label><h4><input type="checkbox" value="">Impuestos</h4></label></div>
           <div class="checkbox"><label><h4><input type="checkbox" value="">Discrepancia Fiscal</h4></label></div>
           <div class="checkbox"><label><h4><input type="checkbox" value="">Otros</h4></label></div>
+          <p><button type="submit" class="btn btn-success btn-block"><i class="fa fa-shopping-cart"></i>&nbsp; Registrarse</button></p>
+          <div class="ResForm" style="width: 100%; color: #fff; text-align: center; margin: 0;"></div>
+        </div>
+           <div class="container col-sm-8" align="center" id="new-prod-index2">
+          <video controls class="" style="width: 100%; height: 50%; padding-bottom: 26px; padding-top: 1px">
+            <source src="assets/videos/Nietzsche.mp4" type="video/mp4">
+          </video>
         </div>
         <button value="'.$fila['CodigoProd'].'" class="btn btn-success  btn-sm botonCarrito"><i class="fa fa-shopping-cart"></i>&nbsp; Añadir</button>
             </div><br><br>

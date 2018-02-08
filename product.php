@@ -1,7 +1,4 @@
-<?php
-include './library/configServer.php';
-include './library/consulSQL.php';
-?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +8,7 @@ include './library/consulSQL.php';
 <body id="container-page-product">
     <?php include './inc/navbar.php'; ?>
     <section id="store">
-<!--        <br>
+<        <br>
         <div class="container">
             <div class="page-header">
               <h1>Tienda <small class="tittles-pages-logo">Contador Virtual</small></h1>
@@ -26,61 +23,24 @@ include './library/consulSQL.php';
                       <li role="presentation" class="dropdown active">
                         <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false">Categorías <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
-                          <! ==================== Lista categorias =============== -->
-<!--                           <?php
-                            $categorias=  ejecutarSQL::consultar("select * from categoria");
-                            while($cate=mysqli_fetch_array($categorias)){
-                                echo '
-                                    <li>
-                                        <a href="#'.$cate['CodigoCat'].'" tabindex="-1" role="tab" id="'.$cate['CodigoCat'].'-tab" data-toggle="tab" aria-controls="'.$cate['CodigoCat'].'" aria-expanded="false">'.$cate['Nombre'].'
-                                        </a>
-                                    </li>';
-                            }
-                          ?> -->
+                          <!-- ==================== Lista categorias =============== -->
                <!-- ==================== Fin lista categorias =============== -->
- <!--                        </ul>
+                         </ul>
                       </li>
                     </ul>
                     <div id="myTabContent" class="tab-content">
                       <div role="tabpanel" class="tab-pane fade" id="all-product" aria-labelledby="all-product-tab">
                           <br><br>
                         <div class="row">
-                        <?php
-                            $consulta=  ejecutarSQL::consultar("select * from producto");
-                            $totalproductos = mysqli_num_rows($consulta);
-                            if($totalproductos>0){
-                                while($fila=mysqli_fetch_array($consulta)){
-                                   echo '
-                                  <div class="col-xs-12 col-sm-6 col-md-4">
-                                       <div class="thumbnail">
-                                         <img src="assets/img-products/'.$fila['Imagen'].'">
-                                         <div class="caption">
-                                           <h3>'.$fila['NombreProd'].'</h3>
-                                           <p>'.$fila['Descripcion'].'</p>
-                                           <p>$'.$fila['Precio'].'</p><br>';
-                                           $por = $fila['Descuento'] * 100;
-                                           echo '<p>El descuento a obtener es del: '.$por.'%</p>
-                                           <p class="text-center">
-                                               <a href="infoProd.php?CodigoProd='.$fila['CodigoProd'].'" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp; Detalles</a>&nbsp;&nbsp;';
-                                              if(!$_SESSION['nombreUser']=="" &&!$_SESSION['claveUser']==""){
-                                               echo '<button value="'.$fila['CodigoProd'].'" class="btn btn-success btn-sm botonCarrito"><i class="fa fa-shopping-cart"></i>&nbsp; Añadir</button>';
-                                             }
-                                           echo '</p>
-
-                                         </div>
-                                       </div>
-                                   </div>     
-                                   ';
-                               }   
-                            }else{
-                                echo '<h2>No hay productos en esta categoria</h2>';
-                            }  
-                        ?>
+<?php
+include_once './library/lib/nusoap.php';
+include './library/mostrarWS.php';
+?>
                         </div>
                       </div><!-- Fin del contenedor de todos los productos -->
                        
                       <!-- ==================== Contenedores de categorias =============== -->
-                   <!--    <?php
+                       <?php
                         $consultar_categorias= ejecutarSQL::consultar("select * from categoria");
                         while($categ=mysqli_fetch_array($consultar_categorias)){
                             echo '<div role="tabpanel" class="tab-pane fade active in" id="'.$categ['CodigoCat'].'" aria-labelledby="'.$categ['CodigoCat'].'-tab"><br>';
@@ -116,8 +76,8 @@ include './library/consulSQL.php';
                             echo '</div>'; 
                         }
                       ?>
-                      <!   =================== Fin contenedores de categorias =============== -->
-<div class="form">
+                      <!--   =================== Fin contenedores de categorias =============== -->
+<!-- <div class="form">
   <div class="container">
     <div class="page-header">
     <div class="container col-md-4 text-center" style="background-color: #8521">Mision</div>
@@ -125,7 +85,7 @@ include './library/consulSQL.php';
     <div class="contain col-md-4 text-center">Valore</div>
     </div>
   </div>
-</div>  
+</div>   -->
                     </div>
                 </div>
             </div>

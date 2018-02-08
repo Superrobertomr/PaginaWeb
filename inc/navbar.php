@@ -74,7 +74,7 @@
         </div>
     </div>
 <!-- 
-======================================================================Mobile menu navbar======================================================================== 
+================================================================Mobile menu navbar===================================================================== 
 -->
     <div class="row visible-xs">
         <div class="col-xs-12">
@@ -106,7 +106,7 @@
     </div>
 </nav>
 <!--
-=====================================================================Modal login==========================================================================
+====================================================================Modal login========================================================================
 -->
 <div class="modal fade modal-login" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
@@ -115,7 +115,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               <h4 class="modal-title text-center text-primary" id="myModalLabel">Iniciar sesión en Contador Virtual</h4>
             </div>
-            <form action="process/login.php" method="post" role="form" style="margin: 20px;" class="FormCatElec" data-form="login">
+            <form action="library/loginWS.php" method="post" role="form" style="margin: 20px;" class="FormCatElec" data-form="login">
               <div class="form-group">
                   <label><span class="glyphicon glyphicon-user"></span>&nbsp;Nombre</label>
                   <input type="text" class="form-control" name="nombre-login" placeholder="Escribe tu nombre" required=""/>
@@ -139,11 +139,11 @@
   </div>
 </div>
 <!--
-==========================================================================Modal Registro======================================================================
+======================================================================Modal Registro====================================================================
 -->
-<div class="modal fade" id="myModaregistro" role="dialog">
+<div class="modal fade" id="myModaregistro" role="dialog"  aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <!-- Modal contenido del modal de registro-->
+      <!-- Modal de registro-->
         <div class="modal-content" >
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -152,7 +152,7 @@
                 </div>
                 <div class="modal-body" align="text-center">Complete el formulario</div>
                 <div>
-                    <form action="process/regclien.php" method="post" role="form" style="margin: 20px;" class="" data-form="registro">
+                    <form action="library/registroWS.php" method="post" role="form" style="margin: 20px;" class="" data-form="registro">
                         <div class="input-group">
                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             <input class="form-control all-elements-tooltip" type="text" placeholder="Ingrese su nombre de la empresa" required name="clien-name" data-toggle="tooltip" data-placement="top" title="Ingrese el nombre de su empresa." pattern="[a-zA-Z]{1,9}" maxlength="100">
@@ -178,7 +178,7 @@
     </div>
 </div>
 <!--
-===================================================================Modal Recuperar Contraseña=================================================================
+================================================================Modal Recuperar Contraseña==============================================================
 -->
 <div class="modal fade" id="myModaRecPass" role="dialog">
     <div class="modal-dialog">
@@ -207,7 +207,7 @@
     </div>
 </div>
 <!--
-=============================================================================Fin de moldales======================================================================
+=======================================================================Fin de moldales==================================================================
 -->
     <div id="mobile-menu-list" class="hidden-sm hidden-md hidden-lg">
         <br>

@@ -1,5 +1,5 @@
   <!-- Modal of terms and Conditions-->
-  <div class="modal fade" id="myModal" role="dialog">
+  <div class="modal fade" id="myModal" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
       <!-- Modal content of terms and Conditions-->
       <div class="modal-content" Style="color:#000000;">
@@ -52,7 +52,7 @@
             <div class="text-justify">Se fija como domicilio de María Asucena Sánchez Del Campo  la Avenida Hidalgo #1899, Entre Calle 18 Y Calle 19, Colonia Residencias, C.P. 83448, San Luis Río Colorado, Sonora.</div><br>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>
         </div>
       </div>
@@ -121,7 +121,7 @@
 
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
           </div>
         </div>
       </div>

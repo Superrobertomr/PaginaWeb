@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="es">
 <head>
     <title>Registro</title>
@@ -95,4 +95,4 @@
     </section>
     <?php include './inc/footer.php'; ?>
 </body>
-</html>
+</html> -->
