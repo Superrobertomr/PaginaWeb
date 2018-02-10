@@ -1,16 +1,11 @@
 <?php
 include_once './lib/nusoap.php';
-$cliente = new nusoap_client("http://192.168.1.74/WebService/servicio.php?wsdl");
+$cliente = new nusoap_client("http://192.168.1.77/WebService/servicio.php?wsdl");
 
 session_start();
 $usuario = $_POST['nombre-login'];
 $contrasena = md5($_POST['clave-login']);
-$contConf = md5($_POST['clien-pass-confir']);
-if($contrasena = $contConf){
-	$contrasenaF = true
-	echo $contrasenaF;
-}
-$parametros = array('usuario' => $usuario, 'contrasena' => $contrasenaF );
+$parametros = array('usuario' => $usuario, 'contrasena' => $contrasena );
 $resultado = $cliente->call("iniciarSesion", $parametros);
 if ($resultado == "cliente") {
 	$_SESSION['nombreUser']=$usuario;
@@ -22,6 +17,8 @@ if ($resultado == "cliente") {
 		$_SESSION['nombreAdmin']=$usuario;
 		$_SESSION['claveAdmin']=$contrasena;
 		echo '<script> location.href="index.php"; </script>';
+	}else {
+	echo "Usuario o contrase&ntildea incorrectos";
 	}
 }
 ?>

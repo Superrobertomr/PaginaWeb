@@ -30,7 +30,7 @@
           <video controls="play" class="" style="width: 100%; height: 75%; padding-bottom: 26px; padding-top: 1px">
             <source src="assets/videos/la-contabilidad.mp4" type="video/mp4">
           </video>
-
+          
         </div>
         <div class="container col-sm-4">
           <h2>Contabilidad Escritorio</h2>

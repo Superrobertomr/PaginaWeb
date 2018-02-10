@@ -28,7 +28,7 @@ $(document).ready(function() {
                 url: url,
                 data: data,
                 beforeSend: function(){
-                    $(".ResFormL").html('Iniciando sesión<br><img src="assets/img/loading.gif" class="center-all-contens">');
+                    $(".ResFormL").html('Iniciando<br><img src="assets/img/loading.gif" class="center-all-contens">');
                 },
                 error: function() {
                     $(".ResFormL").html("Ha ocurrido un error en el sistema");

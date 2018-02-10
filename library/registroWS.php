@@ -1,6 +1,6 @@
 <?php
 include_once './lib/nusoap.php';
-$cliente = new nusoap_client("http://192.168.1.74/WebService/servicio.php?wsdl");
+$cliente = new nusoap_client("http://192.168.1.77/WebService/servicio.php?wsdl");
 
 $usuario = $_POST['clien-name'];
 $contrasena = md5($_POST['clien-pass']);

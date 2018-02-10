@@ -1,7 +1,5 @@
 <?php
-    include './library/configServer.php';
-    include './library/consulSQL.php';
-    include './process/securityPanel.php';
+  include './process/securityPanel.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,101 +9,113 @@
     <script type="text/javascript" src="js/admin.js"></script>
 </head>
 <body id="container-page-configAdmin">
-    <?php include './inc/navbar.php'; ?>
-    <section id="prove-product-cat-config">
-        <div class="container">
-            <div class="page-header">
-              <h1>Panel de administración <small class="tittles-pages-logo">Contador Virtual</small></h1>
-            </div>
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#Productos" role="tab" data-toggle="tab">Productos</a></li>
-              <li role="presentation"><a href="#Proveedores" role="tab" data-toggle="tab">Proveedores</a></li>
-              <li role="presentation"><a href="#Categorias" role="tab" data-toggle="tab">Categorías</a></li>
-              <!-- <li role="presentation"><a href="#Admins" role="tab" data-toggle="tab">Admin</a></li> -->
-              <li role="presentation"><a href="#Pedidos" role="tab" data-toggle="tab">Pedidos</a></li>
-            </ul>
-            <div class="tab-content">
-                <!--==============================Panel productos===============================-->
-                <div role="tabpanel" class="tab-pane fade in active" id="Productos">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6">
-                        <br><br>
-                        <!--Agregar un producto-->
-                        <div id="add-product">
-                            <h2 class="text-primary text-center"><small><i class="fa fa-plus"></i></small>&nbsp;&nbsp;Agregar un producto nuevo</h2>
-                            <form role="form" action="process/regproduct.php" method="post" enctype="multipart/form-data">
-                              <div class="form-group">
-                                <label>Código de producto</label>
-                                <input type="text" class="form-control"  placeholder="Código" required maxlength="30" name="prod-codigo">
-                              </div>
-                              <div class="form-group">
-                                <label>Nombre de producto</label>
-                                <input type="text" class="form-control"  placeholder="Nombre" required maxlength="30" name="prod-name">
-                              </div>
-                              <div class="form-group">
-                                <label>Categoría</label>
-                                <select class="form-control" name="prod-categoria">
-                                    <?php 
-                                        $categoriac=  ejecutarSQL::consultar("select * from categoria");
-                                        while($catec=mysqli_fetch_array($categoriac)){
-                                            echo '<option value="'.$catec['CodigoCat'].'">'.$catec['Nombre'].'</option>';
-                                        }
-                                    ?>
-                                </select>
-                              </div>
-                              <div class="form-group">
-                                <label>Precio</label>
-                                <input type="text" class="form-control"  placeholder="Precio" required maxlength="20" pattern="[0-9]{10,2}" name="prod-price">
-                              </div>
-                              <div class="form-group">
-                                <label>Descripcion</label>
-                                <input type="text" class="form-control"  placeholder="Descripción" required maxlength="500"  name="prod-desc">
-                              </div>
-                              <div class="form-group">
-                                <label>Descuento</label>
-                                <input type="text" class="form-control"  placeholder="Descuento" required maxlength="10" pattern="[0-9]{10,2}" name="prod-reb">
-                              </div>
-                              <div class="form-group">
-                                <label>IVA</label>
-                                <input type="text" class="form-control"  placeholder="IVA aplicable" required maxlength="10" pattern="[0-9]{10,2}" name="prod-iva">
-                              </div>
-                              <div class="form-group">
-                                <label>Proveedor</label>
-                                <select class="form-control" name="prod-codigoP">
-                                    <?php 
-                                        $proveedoresc=  ejecutarSQL::consultar("select * from proveedor");
-                                        while($provc=mysqli_fetch_array($proveedoresc)){
-                                            echo '<option value="'.$provc['RFCProveedor'].'">'.$provc['NombreProveedor'].'</option>';
-                                        }
-                                    ?>
-                                </select>
-                              </div>
-                              <div class="form-group">
-                                <label>Imagen de producto</label>
-                                <input type="file" name="img">
-                                <p class="help-block">Formato de imagenes admitido png, jpg, gif, jpeg</p>
-                              </div>
-                                <input type="hidden"  name="admin-name" value="<?php echo $_SESSION['nombreAdmin'] ?>">
-                              <p class="text-center"><button type="submit" class="btn btn-primary">Agregar a la tienda</button></p>
-                              <div id="res-form-add" style="width: 100%; text-align: center; margin: 0;"></div>
-                            </form>
-                        </div>
+  <?php include './inc/navbar.php'; ?>
+  <section id="prove-product-cat-config">
+      <div class="container">
+        <div class="page-header">
+          <h1>Panel de administraci&oacuten <small class="tittles-pages-logo">Contador Virtual</small></h1>
+        </div>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#Productos" role="tab" data-toggle="tab">Productos</a></li>
+          <li role="presentation"><a href="#Proveedores" role="tab" data-toggle="tab">Proveedores</a></li>
+          <li role="presentation"><a href="#Categorias" role="tab" data-toggle="tab">Categor&iacuteas</a></li>
+          <li role="presentation"><a href="#Pedidos" role="tab" data-toggle="tab">Pedidos</a></li>
+        </ul>
+        <div class="tab-content">
+<!--====================================================================Panel productos==========================================================================-->
+          <div role="tabpanel" class="tab-pane fade in active" id="Productos">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6">
+                <br><br>
+<!--=================================================================Agregar un producto=========================================================================-->
+                <div id="add-product">
+                  <h2 class="text-primary text-center"><small><i class="fa fa-plus"></i></small>&nbsp;&nbsp;Agregar un producto nuevo</h2>
+                  <form role="form" action="process/regproduct.php" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                      <label>C&oacutedigo de producto</label>
+                      <input type="text" class="form-control"  placeholder="C&oacute;digo" required maxlength="30" name="prod-codigo">
                     </div>
+                    <div class="form-group">
+                      <label>Nombre de producto</label>
+                      <input type="text" class="form-control"  placeholder="Nombre" required maxlength="30" name="prod-name">
+                    </div>
+                    <div class="form-group">
+                      <label>Categor&iacuteas</label>
+                      <select class="form-control" name="prod-categoria">
+                      <?php 
+                        include_once './library/lib/nusoap.php';
+                        $cliente = new nusoap_client("http://192.168.1.77/WebService/servicio.php?wsdl");
+                        $tabla = "Sistemas";
+                        $cond = "";
+                        $parametros = array('tabla' => $tabla, 'cond' => $cond );
+                        $resultado = $cliente->call("seleccionarConsulta", $parametros);
+                        foreach ($resultado as $fila) {
+                            echo'
+
+                                  <option value=" '.$fila['TipoSistema'].'">'.$fila['TipoSistema'].'</option>';
+
+                        } 
+                      ?>
+                      </select>
+                      </div>
+                      <div class="form-group">
+                        <label>Precio</label>
+                        <input type="text" class="form-control"  placeholder="Precio" required maxlength="20" pattern="[0-9]{10,2}" name="prod-price">
+                      </div>
+                      <div class="form-group">
+                        <label>Descripci&oacuten</label>
+                        <input type="text" class="form-control"  placeholder="Descripci&oacute;n" required maxlength="500"  name="prod-desc">
+                      </div>
+                      <div class="form-group">
+                        <label>Descuento</label>
+                        <input type="text" class="form-control"  placeholder="Descuento" required maxlength="10" pattern="[0-9]{10,2}" name="prod-reb">
+                      </div>
+                      <div class="form-group">
+                        <label>IVA</label>
+                        <input type="text" class="form-control"  placeholder="IVA aplicable" required maxlength="10" pattern="[0-9]{10,2}" name="prod-iva">
+                      </div>
+                      <div class="form-group">
+                        <label>Proveedor</label>
+                        <select class="form-control" name="prod-codigoP">
+                            <?php 
+                                $proveedoresc=  ejecutarSQL::consultar("select * from proveedor");
+                                while($provc=mysqli_fetch_array($proveedoresc)){
+                                    echo '<option value="'.$provc['RFCProveedor'].'">'.$provc['NombreProveedor'].'</option>';
+                                }
+                            ?>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label>Imagen de producto</label>
+                        <input type="file" name="img">
+                        <p class="help-block">Formato de imagenes admitido png, jpg, gif, jpeg</p>
+                      </div>
+                        <input type="hidden"  name="admin-name" value="<?php echo $_SESSION['nombreAdmin'] ?>">
+                      <p class="text-center"><button type="submit" class="btn btn-primary">Agregar a la tienda</button></p>
+                      <div id="res-form-add" style="width: 100%; text-align: center; margin: 0;"></div>
+                    </form>
+                </div>
+              </div>
                      <!--Eliminar un producto-->
                     <div class="col-xs-12 col-sm-6">
                         <br><br>
                         <div id="del-prod-form">
                             <h2 class="text-danger text-center"><small><i class="fa fa-trash-o"></i></small>&nbsp;&nbsp;Eliminar un producto</h2>
-                             <form action="process/delprod.php" method="post" role="form">
+                             <form action="process/mostrarWS.php" method="post" role="form">
                                  <div class="form-group">
                                      <label>Productos</label>
                                      <select class="form-control" name="prod-code">
                                          <?php 
-                                             $productoc=  ejecutarSQL::consultar("select * from producto");
-                                             while($prodc=mysqli_fetch_array($productoc)){
-                                                 echo '<option value="'.$prodc['CodigoProd'].'">'.$prodc['Marca'].'-'.$prodc['NombreProd'].'-'.$prodc['Modelo'].'</option>';
-                                             }
+                                          // include_once './library/lib/nusoap.php';
+                                          // $cliente = new nusoap_client("http://192.168.1.77/WebService/servicio.php?wsdl");
+                                          // $tabla = "TiposLicencias";
+                                          // $cond = "";
+                                          // $parametros = array('tabla' => $tabla, 'cond' => $cond );
+                                          // $resultado = $cliente->call("seleccionarConsulta", $parametros);
+                                          // foreach ($resultado as $fila) {
+                                          //   echo'<option value=" '.$fila['Nombre'].'">'.$fila['Nombre'].'</option>';
+                                          // } 
                                          ?>
                                      </select>
                                  </div>
@@ -124,11 +134,11 @@
                               <table class="table table-bordered">
                                   <thead class="">
                                       <tr>
-                                          <th class="text-center">Código</th>
+                                          <th class="text-center">C&oacutedigo</th>
                                           <th class="text-center">Nombre</th>
                                           <th class="text-center">Categoría</th>
                                           <th class="text-center">Precio</th>
-                                          <th class="text-center">Descripción</th>
+                                          <th class="text-center">Descripci&oacuten</th>
                                           <th class="text-center">Descuento</th>
                                           <th class="text-center">Proveedor</th>
                                           <th class="text-center">Opciones</th>
@@ -225,19 +235,19 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Contraseña</label>
-                                    <input class="form-control" type="password" name="admin-pass" placeholder="Contraseña" required="">
+                                    <input class="form-control" type="password" name="admin-pass" placeholder="Contrase&ntilde;a" required="">
                                 </div>                                
                                 <div class="form-group">
-                                    <label>Dirección</label>
-                                    <input class="form-control" type="text" name="prove-dir" placeholder="Dirección proveedor" required="">
+                                    <label>Direcci&oacuten</label>
+                                    <input class="form-control" type="text" name="prove-dir" placeholder="Direcci&oacute;n proveedor" required="">
                                 </div>
                                 <div class="form-group">
-                                    <label>Teléfono</label>
-                                    <input class="form-control" type="tel" name="prove-tel" placeholder="Número telefónico" pattern="[0-9]{1,20}" maxlength="20" required="">
+                                    <label>Tel&eacutefono</label>
+                                    <input class="form-control" type="tel" name="prove-tel" placeholder="Número telef&oacute;nico" pattern="[0-9]{1,20}" maxlength="20" required="">
                                 </div>
                                 <div class="form-group">
-                                    <label>Página web</label>
-                                    <input class="form-control" type="text" name="prove-web" placeholder="Página web proveedor" required="">
+                                    <label>P&aacutegina web</label>
+                                    <input class="form-control" type="text" name="prove-web" placeholder="P&aacute;gina web proveedor" required="">
                                 </div>
                                 <p class="text-center"><button type="submit" class="btn btn-primary">Añadir proveedor</button></p>
                                 <br>
@@ -279,9 +289,9 @@
                                           <th class="text-center">RFC</th>
                                           <th class="text-center">Nombre</th>
                                           <th class="text-center">Clave</th>
-                                          <th class="text-center">Dirección</th>
+                                          <th class="text-center">Direcci&oacuten</th>
                                           <th class="text-center">Telefono</th>
-                                          <th class="text-center">Página web</th>
+                                          <th class="text-center">P&aacutegina web</th>
                                           <th class="text-center">Opciones</th>
                                       </tr>
                                   </thead>
@@ -330,16 +340,16 @@
                                 <h2 class="text-info text-center"><small><i class="fa fa-plus"></i></small>&nbsp;&nbsp;Agregar categoría</h2>
                                 <form action="process/regcategori.php" method="post" role="form">
                                     <div class="form-group">
-                                        <label>Código</label>
-                                        <input class="form-control" type="text" name="categ-code" placeholder="Código de categoria" maxlength="9" required="">
+                                        <label>C&oacutedigo</label>
+                                        <input class="form-control" type="text" name="categ-code" placeholder="C&oacute;digo de categoria" maxlength="9" required="">
                                     </div>
                                     <div class="form-group">
                                         <label>Nombre</label>
                                         <input class="form-control" type="text" name="categ-name" placeholder="Nombre de categoria" maxlength="30" required="">
                                     </div>
                                     <div class="form-group">
-                                        <label>Descripción</label>
-                                        <input class="form-control" type="text" name="categ-descrip" placeholder="Descripcióne de categoria" required="">
+                                        <label>Descripci&oacuten</label>
+                                        <input class="form-control" type="text" name="categ-descrip" placeholder="Descripci&oacute;ne de categoria" required="">
                                     </div>
                                     <p class="text-center"><button type="submit" class="btn btn-primary">Agregar categoría</button></p>
                                     <br>
@@ -377,9 +387,9 @@
                                     <table class="table table-bordered">
                                         <thead class="">
                                             <tr>
-                                                <th class="text-center">Código</th>
+                                                <th class="text-center">C&oacutedigo</th>
                                                 <th class="text-center">Nombre</th>
-                                                <th class="text-center">Descripción</th>
+                                                <th class="text-center">Descripci&oacuten</th>
                                                 <th class="text-center">Opciones</th>
                                             </tr>
                                         </thead>

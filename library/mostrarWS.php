@@ -1,5 +1,6 @@
 <?php
-$cliente = new nusoap_client("http://192.168.1.74/WebService/servicio.php?wsdl");
+include_once './lib/nusoap.php';
+$cliente = new nusoap_client("http://192.168.1.77/WebService/servicio.php?wsdl");
 
 echo "<br>Esta parte corresponde al las 3 categorias o sistemas disponibles<br>";
 $tabla = "Sistemas";

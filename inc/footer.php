@@ -22,9 +22,9 @@
       <h5 class="text-center tittles-pages-logo">Contador Virtual &copy; 2014</h5>
       <h6>Av. Hidalgo No. 1899, Col. Residencias, San Luis Rio Colorado, Sonora</h6>
       <h6>Tel (01 653) 53 6 25 35 y (01 653) 53 4 45 59 Contador Virtual</h6>
-      <h6>Correo Electronico: info@tucontadorvirtual.com</h6>
+      <h6>Correo Electr&oacutenico: info@tucontadorvirtual.com</h6>
         <!-- Trigger the modal with a button -->
-      <button style="color:#fff;" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">TÉRMINOS Y CONDICIONES</button>
+      <button style="color:#fff;" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">T&EacuteRMINOS Y CONDICIONES</button>
       <button style="color:#fff;" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal2">AVISO DE PRIVACIDAD</button>
    <?php include './process/Modales.php'; ?>
     </div>
