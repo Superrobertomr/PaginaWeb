@@ -1,4 +1,8 @@
+<style> /*elimina el scroll horizontal.*/
+body {overflow-x:hidden;}
+</style>
 <footer>
+    <!--Iconos de paginas sociales-->
     <h3 class="text-center">Siguenos en</h3><br>
     <ul class="list-unstyled text-center">
         <a href="#" class="social-icon all-elements-tooltip" data-toggle="tooltip" data-placement="bottom" title="Facebook">
@@ -14,19 +18,21 @@
             <img src="assets/icons/social-pinterest.png" alt="pinterest-icon">
         </a>
         <a href="#" class="social-icon all-elements-tooltip" data-toggle="tooltip" data-placement="bottom" title="Twitter">
-            <img src="assets/icons/social-twitter.png" alt="twitter-icon">
+            <img src="assets/icons/social-twitter.png">
         </a>
     </ul>
     <br>
+    <!--Informacion relevante de la empresa y el aviso de privacidad asi como los terminos y condiciones de esta misma.-->
     <div class="text-center">
       <h5 class="text-center tittles-pages-logo">Contador Virtual &copy; 2014</h5>
-      <h6>Av. Hidalgo No. 1899, Col. Residencias, San Luis Rio Colorado, Sonora</h6>
-      <h6>Tel (01 653) 53 6 25 35 y (01 653) 53 4 45 59 Contador Virtual</h6>
+      <h6>Av. Hidalgo No. 1899, Col. Residencias, C.P. 83448, San Luis Rio Colorado, Sonora</h6>
       <h6>Correo Electr&oacutenico: info@tucontadorvirtual.com</h6>
+      <h6>Tel (01 653) 53 6 25 35 Contador Virtual</h6>
         <!-- Trigger the modal with a button -->
-      <button style="color:#fff;" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">T&EacuteRMINOS Y CONDICIONES</button>
-      <button style="color:#fff;" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal2">AVISO DE PRIVACIDAD</button>
-   <?php include './process/Modales.php'; ?>
-    </div>
-    </div>      
+        <div>
+        <a style="color:#fff;" data-toggle="modal" data-backdrop="static" data-keyboard="false" href="#myModal">T&EacuteRMINOS Y CONDICIONES</a>
+        </div>
+        <div><a style="color:#fff;" data-toggle="modal" data-backdrop="static" data-keyboard="false" href="#myModal2">AVISO DE PRIVACIDAD</a></div>
+        <?php include './process/Modales.php'; ?>
+    </div>  
 </footer>

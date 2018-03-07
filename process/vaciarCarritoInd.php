@@ -1,13 +1,10 @@
 <?php
 include_once './lib/nusoap.php';
 $cliente = new nusoap_client("http://servidor/Roberto/WebService/servicio.php?wsdl");
-session_start();
-unset($_SESSION['producto']);
-unset($_SESSION['contador']);
-unset($_SESSION['sumaTotal']);
-//Al mismo tiempo se borra todo del carrito
+$id = $_GET['id'];
+$Usuario = $_GET['user'];
 $tabla = "Carrito_Temp";
-$cond = "WHERE Usuario_reg LIKE '".$_SESSION['nombreUser']."'";
+$cond = "WHERE Usuario_reg LIKE '".$Usuario."' AND Carrito_TempID = '".$id."'";
 $parametros = array('tabla' => $tabla, 'cond' => $cond);
 $resultado = $cliente->call("eliminarTupla", $parametros);
 ?>

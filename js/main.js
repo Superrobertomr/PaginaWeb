@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $("#navbar-auto-hidden").autoHidingNavbar();
+    $("#reg-info-index").autoHidingNavbar();
     $(".button-mobile-menu").click(function(){
         $("#mobile-menu-list").animate({width: 'toggle'},200);
     });	
@@ -21,7 +22,7 @@ $(document).ready(function() {
         var type=$(this).attr('method');
         var url=$(this).attr('action');
         var formType=$(this).attr('data-form');
-
+//animaciones de login 
         if(formType=="login"){
             $.ajax({
                 type: type,
@@ -39,6 +40,7 @@ $(document).ready(function() {
             });
             return false;
         }else{
+//animaciones de registro de usuarios
             $.ajax({
                 type: type,
                 url: url,

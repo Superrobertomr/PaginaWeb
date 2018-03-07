@@ -81,13 +81,13 @@ class PHPMailer {
    * Sets the From email address for the message.
    * @var string
    */
-  public $From              = 'root@localhost';
+  public $From              = '';
 
   /**
    * Sets the From name of the message.
    * @var string
    */
-  public $FromName          = 'Root User';
+  public $FromName          = 'Tu Contador Virtual';
 
   /**
    * Sets the Sender email (Return-Path) of the message.  If not empty,
@@ -177,13 +177,13 @@ class PHPMailer {
    * Hosts will be tried in order.
    * @var string
    */
-  public $Host          = 'localhost';
+  public $Host          = 'smtp.gmail.com';
 
   /**
    * Sets the default SMTP server port.
    * @var int
    */
-  public $Port          = 25;
+  public $Port          = 587;
 
   /**
    * Sets the SMTP HELO of the message (Default is $Hostname).
@@ -202,7 +202,7 @@ class PHPMailer {
    * Sets SMTP authentication. Utilizes the Username and Password variables.
    * @var bool
    */
-  public $SMTPAuth      = false;
+  public $SMTPAuth      = true;
 
   /**
    * Sets SMTP username.
@@ -227,7 +227,7 @@ class PHPMailer {
    * Sets SMTP class debugging on or off.
    * @var bool
    */
-  public $SMTPDebug     = false;
+  public $SMTPDebug     = true;
 
   /**
    * Prevents the SMTP connection from being closed after each mail
@@ -235,7 +235,7 @@ class PHPMailer {
    * requires an explicit call to SmtpClose().
    * @var bool
    */
-  public $SMTPKeepAlive = false;
+  public $SMTPKeepAlive = true;
 
   /**
    * Provides the ability to have the TO field process individual
